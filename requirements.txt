@@ -1,5 +1,4 @@
-
+--upgrade pip
 collections
 PIL
 io
-random
