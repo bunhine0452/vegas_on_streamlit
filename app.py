@@ -234,7 +234,7 @@ def image_to_bytes(img):
 def main():
     st.title("라스베가스 게임")
     
-    if st.button("게임 설명"):
+    if st.checkbox("게임 설명"):
         st.write("""
         ##### 게임 설명
         - 라스베가스 게임은 주사위를 굴려 카지노에 배치하고 돈을 획득하는 게임입니다. 
