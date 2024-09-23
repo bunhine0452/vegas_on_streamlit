@@ -233,7 +233,14 @@ def image_to_bytes(img):
 
 def main():
     st.title("라스베가스 게임")
-
+    st.write("""
+        ##### 게임 설명
+        - 라스베가스 게임은 주사위를 굴려 카지노에 배치하고 돈을 획득하는 게임입니다. 
+        - 각 플레이어는 일반 주사위 8개 와 딜러 주사위 4개를 사용하여 카지노에 배치할 수 있습니다. 
+        - 라운드가 끝나면 각 카지노에서 가장 많은 주사위를 배치한 플레이어가 돈을 획득합니다. 
+        - 딜러 주사위는 통합 주사위로 딜러 주사위를 이용해서 상대방의 주사위를 막을 수 있습니다.
+        - 4라운드가 끝난 후 가장 많은 돈을 가진 플레이어가 승리합니다.
+        """)
     if 'game' not in st.session_state:
         st.session_state.game = None
         st.session_state.round_ended = False
@@ -319,7 +326,7 @@ def main():
                 
                 st.session_state.round_ended = False
                 
-                if game.current_round > 4:
+                if game.current_round == 5:
                     winner = game.get_winner()
                     st.write(f"게임 종료! 승자: 플레이어 {winner.id + 1} (${winner.money}, 카드 {winner.card_count}장)")
                     if st.button("새 게임 시작"):
